@@ -11,7 +11,20 @@
       "port": 9229,
       "skipFiles": [
         "<node_internals>/**"
-      ]
+      ],
+      "restart": true
+    },
+    {
+      "name":"Launch via tsnd",
+      "type":"node",
+      "request":"launch",
+      "protocol":"inspector",
+      "cwd":"${workspaceRoot}",
+      "runtimeExecutable":"${workspaceRoot}/node_modules/.bin/ts-node-dev",
+      "args":[  
+          "${workspaceRoot}/src/index.ts"
+      ],
+      "restart":true
     }
   ]
 }
