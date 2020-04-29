@@ -1,10 +1,16 @@
-import * as dotenv from 'dotenv'
+import instagramConfig from './config/instagram.config'
+import { InstagramService } from './services/instagram/instagram.service'
+import * as fs from 'fs'
+import { join } from 'path'
 
-dotenv.config()
+const filePath = join(__dirname, '..', 'images', 'logo.jpg')
 
-function main () {
-  const message: string = 'Hello world'
-  console.log(message)
+async function main () {
+  const { username, password } = instagramConfig
+  const client = new InstagramService(username, password)
+  const file = fs.readFileSync(filePath)
+  console.log(await client.uploadPhoto(file, 'Upload by api'))
 }
 
 main()
+  .finally(() => process.exit())
