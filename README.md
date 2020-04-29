@@ -1,6 +1,6 @@
 # Instagram api test
 
-Test library https://www.npmjs.com/package/instagram-web-api
+Test library https://www.npmjs.com/package/instagram-private-api
 
 ## Environment variables
 ```env

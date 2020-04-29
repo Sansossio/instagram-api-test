@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "instagram-private-api": "^1.39.2",
     "ts-node-dev": "^1.0.0-pre.44"
   }
 }
